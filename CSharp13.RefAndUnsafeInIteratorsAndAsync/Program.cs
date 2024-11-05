@@ -5,20 +5,28 @@ await Method();
 
 async Task Method()
 {
-    int number = 42;
-    ref int x = ref number;
+    byte[] numbers = { 1, 2, 3, 4, 5 };
 
     await Task.Delay(1000);
 
-    ref int y = ref x;
+    ref byte lastNumber = ref GetLast(numbers);
+
+    lastNumber = 6;
 }
 
-IEnumerable<int> Iterator()
+//IEnumerable<int> Iterator()
+//{
+//    byte[] numbers = { 1, 2, 3, 4, 5 };
+
+//    ref byte lastNumber = ref GetLast(numbers);
+
+//    yield return lastNumber;
+
+//    lastNumber = 6;
+//}
+
+
+ref byte GetLast(byte[] numbers)
 {
-    int number = 42;
-    ref int x = ref number;
-
-    yield return x;
-
-    ref int y = ref x;
+    return ref numbers[^1];
 }

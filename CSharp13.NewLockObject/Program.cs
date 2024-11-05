@@ -31,17 +31,3 @@ lock ((object)l)
 {
     // ...
 }
-
-
-//await MethodAsync();
-
-
-//static async Task MethodAsync()
-//{
-//    var l = new Lock();
-
-//    using (l.EnterScope())
-//    {
-//        await Task.Delay(1000);
-//    }
-//}
